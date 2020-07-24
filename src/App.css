@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    height: 100vh;
+    transition: 500ms ease-in-out all;
+    background-color: white;
+    overflow: hidden;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.main-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 246px;
+}
+
+
+@media (max-width: 1780px) {
+    .main-row {
+        padding: 0 150px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .main-row {
+        padding: 0 50px;
+    }
+}

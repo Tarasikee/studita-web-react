@@ -1,0 +1,130 @@
+.levelItem {
+    padding: 18px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    cursor: pointer;
+    transition: .1s cubic-bezier(0.18, 0.36, 0, 1.24);
+}
+
+.levelItem:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.levelItem h5 {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.levelItem p {
+    width: 290px;
+    margin: 10px 0 18px;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.ended {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.chart {
+
+}
+
+.chart span {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.chart > div {
+    width: 298px;
+    height: 6px;
+    margin-top: 12px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+
+.chart > div > div {
+    height: 100%;
+    border-radius: 15px 0 0 15px;
+    background: #1A73E8;
+}
+
+.InterestingLevel {
+    background: linear-gradient(90deg, #0066FF 0%, #0085FF 100%);
+}
+
+.InterestingLevel:hover {
+    background: linear-gradient(90deg, rgba(0, 102, 255, 0.68) 0%, rgba(0, 133, 255, 0.68) 100%);
+}
+
+.interestingDescription {
+    margin: 10px 0 0 0 !important;
+}
+
+.tagStyle {
+    margin: 0 0 10px !important;
+    font-family: Roboto, sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 19px !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.SubscribeLevel {
+    max-width: 334px;
+    background: rgba(255, 255, 255, 0.08);
+    margin-bottom: 21px;
+}
+
+.SubscribeLevel p {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.SubscribeLevel p:nth-child(2) {
+    margin-top: 14px;
+}
+
+.SubscribeLevel p:nth-child(2) a {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #1A73E8;
+    text-decoration: none;
+}
+
+.SubscribeLevel p:nth-child(2) a:hover {
+    color: rgba(26, 115, 232, 0.68);
+}
+
+@media (max-width: 1400px) {
+    .InterestingLevel {
+        max-width: 296px;
+    }
+
+    .levelItem {
+
+        margin-left: 0 !important;
+    }
+}

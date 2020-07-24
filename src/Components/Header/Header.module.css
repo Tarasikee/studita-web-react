@@ -1,0 +1,65 @@
+header {
+    display: flex;
+    min-height: 79px;
+    transition: 500ms ease-in-out all;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0 250px;
+}
+
+.logotype {
+    display: flex;
+    align-items: center;
+}
+
+.logotype span {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    transition: 500ms ease-in-out;
+    color: rgba(0, 0, 0, 0.87);
+    margin-left: 12px;
+}
+
+header div:nth-child(2) {
+    position: relative;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    transition: 500ms ease-in-out;
+    font-size: 30px;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.loginLink {
+    display: flex;
+    align-items: center;
+}
+
+.loginLink a {
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #1A73E8;
+}
+
+.loginLink a:hover {
+    color: rgba(26, 115, 232, 0.68);
+}
+
+@media(max-width: 1780px) {
+    header {
+        padding: 0 150px;
+    }
+}
+@media(max-width: 1600px) {
+    header {
+        padding: 0 50px;
+    }
+}

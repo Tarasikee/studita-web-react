@@ -1,0 +1,60 @@
+.container {
+
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.levelItem {
+
+}
+
+.levelsTable {
+    display: flex;
+    max-width: 770px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.levelsTable > div:nth-child(4) {
+    width: 100%;
+}
+
+.levelNumber {
+    max-width: 105px;
+    margin: 26px 0 18px;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+@media(max-width: 1375px) {
+
+    .levelsTable {
+        flex-direction: column;
+    }
+
+    .levelsTable > div {
+        margin-bottom: 18px;
+    }
+
+    .levelsTable > div:nth-child(even) {
+        margin-left: 0;
+    }
+
+    .levelsTable > div:nth-child(3n) {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
