@@ -2,8 +2,7 @@ import React from 'react';
 import s from './ItemBar.module.css';
 import {NavLink} from "react-router-dom";
 
-const ItemBar = ({path, style, icon, text, isButton, onClick, styleP}) => {
-
+const ItemBar = ({path, style, icon, text, isButton, onClick, styleP, theme}) => {
 
 
     return (
@@ -17,16 +16,22 @@ const ItemBar = ({path, style, icon, text, isButton, onClick, styleP}) => {
                             to={path}
                             activeClassName={s.active}
                         >
-                            <div style={style} className={s.item}>
+                            <div style={style} className={
+                                theme === 'white' ? s.item + ' ' + s.white : s.item
+                            }>
                                 {icon}
                                 <p style={styleP}>{text}</p>
                             </div>
                         </NavLink>
                         : <button
                             onClick={() => onClick()}
-                            className={s.containerItem}
+                            className={
+                                theme === 'white' ? s.containerItem + ' ' + s.whiteItem : s.containerItem
+                            }
                         >
-                            <div style={style} className={s.item}>
+                            <div style={style} className={
+                                theme === 'white' ? s.item + ' ' + s.white : s.item
+                            }>
                                 {icon}
                                 <p style={styleP}>{text}</p>
                             </div>

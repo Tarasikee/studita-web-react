@@ -89,6 +89,7 @@ class App extends Component {
                             </Route>
 
                             <RightBar
+                                theme={this.state.theme}
                                 isLogin={this.state.params.isLogin}
                                 days={0} level={0} exp={0}
                             />

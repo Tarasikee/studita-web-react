@@ -4,14 +4,14 @@ import UserLevel from "./UserLevel/UserLevel";
 import Statistic from "./Statistic/Statistic";
 import FriendsComponent from "./FriendsComponent/FriendsComponent";
 
-const RightBar = ({isLogin, days, level, exp}) => {
+const RightBar = ({isLogin, days, level, exp, theme}) => {
 
 
     return (
         <div style={{maxWidth: '256px'}}>
-            <UserLevel level={level} exp={exp}/>
-            <Statistic days={days}/>
-            <FriendsComponent isLogin={isLogin}/>
+            <UserLevel theme={theme} level={level} exp={exp}/>
+            <Statistic theme={theme} days={days}/>
+            <FriendsComponent theme={theme} isLogin={isLogin}/>
         </div>
     );
 };

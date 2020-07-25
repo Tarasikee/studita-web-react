@@ -7,6 +7,30 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControl from "@material-ui/core/FormControl";
 import Radio from "@material-ui/core/Radio";
+import {withStyles} from '@material-ui/core/styles';
+
+
+const StuditaBlackThemeRadio = withStyles({
+    root: {
+        color: 'rgba(255, 255, 255, 0.5)',
+        '&$checked': {
+            color: '#1A73E8',
+        },
+    },
+    checked: {},
+})((props) => <Radio color="primary" {...props} />);
+
+
+const StuditaWhiteThemeRadio = withStyles({
+    root: {
+        color: 'rgba(0, 0, 0, 0.5)',
+        '&$checked': {
+            color: '#1A73E8',
+        },
+    },
+    checked: {},
+})((props) => <Radio color="primary" {...props} />);
+
 
 const ModalOnTheme = props => {
 
@@ -30,12 +54,19 @@ const ModalOnTheme = props => {
         onClose()
     };
 
+
     const isThemeWhite = () => {
         if (theme === 'white') {
             return {color: 'rgba(0, 0, 0, 0.87)'}
         } else {
             return {color: 'white'}
         }
+    };
+
+    const RadioForTheme = () => {
+        return theme === 'black'
+            ? <StuditaBlackThemeRadio/>
+            : <StuditaWhiteThemeRadio/>
     };
 
     return (
@@ -71,13 +102,13 @@ const ModalOnTheme = props => {
                                     <FormControlLabel value="black"
                                                       labelPlacement="start"
                                                       style={isThemeWhite()}
-                                                      control={<Radio color="primary" style={{color: '#1A73E8'}}/>}
+                                                      control={RadioForTheme()}
                                                       className={s.formControlLabel}
                                                       label="Тёмная"/>
                                     <FormControlLabel value="white"
                                                       labelPlacement="start"
                                                       style={isThemeWhite()}
-                                                      control={<Radio color="primary" style={{color: '#1A73E8'}}/>}
+                                                      control={RadioForTheme()}
                                                       className={s.formControlLabel}
                                                       label="Светлая"/>
                                     <button type="submit" className={s.btnSubmit}>

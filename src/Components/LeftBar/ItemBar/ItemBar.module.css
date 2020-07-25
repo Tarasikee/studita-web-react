@@ -16,10 +16,12 @@ button.containerItem {
     border: none;
     outline: none;
     background-color: #111111;
+    border-radius: 0;
+    transition: 500ms ease-in-out all;
 }
 
-button.containerItem {
-    border-radius: 0;
+.whiteItem {
+    background-color: white!important;
 }
 
 .containerItem.active .item {
@@ -37,7 +39,12 @@ button.containerItem {
     align-items: center;
     color: rgba(255, 255, 255, 0.5);
     padding: 10px 0 10px 14px;
+    transition: 100ms ease-in-out all;
     border-radius: 8px;
+}
+
+.item.white:hover {
+    background: rgba(0, 0, 0, 0.06)!important;
 }
 
 .item:hover {
@@ -46,6 +53,7 @@ button.containerItem {
 
 .item svg {
     width: 26px;
+    transition: 100ms ease-in-out all;
     height: 26px;
 }
 
@@ -53,6 +61,7 @@ button.containerItem {
     margin-left: 18px;
     font-family: Roboto, sans-serif;
     font-weight: 500;
+    transition: 100ms ease-in-out all;
     font-size: 18px;
     line-height: 21px;
 }

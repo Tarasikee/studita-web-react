@@ -8,6 +8,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import PaletteOutlinedIcon from '@material-ui/icons/PaletteOutlined';
 import LanguageOutlinedIcon from '@material-ui/icons/LanguageOutlined';
 import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
+import s from './LeftBar.module.css'
 import ItemBar from "./ItemBar/ItemBar";
 import ModalOnTheme from "./ModalOnTheme/ModalOnTheme";
 
@@ -29,7 +30,7 @@ const LeftBar = props => {
 
         if (theme === 'white' && !isLogin) {
             return {color: 'rgba(0, 0, 0, 0.5)', marginBottom: '14px'}
-        } else if (theme === 'white' && isLogin)  {
+        } else if (theme === 'white' && isLogin) {
             return {color: 'rgba(0, 0, 0, 0.5)', marginBottom: '0'}
         } else if (theme !== 'white' && !isLogin) {
             return {color: 'rgba(255, 255, 255, 0.5)', marginBottom: '14px'}
@@ -38,11 +39,25 @@ const LeftBar = props => {
         }
     };
 
+    const handleColorAndMarginTop = () => {
+
+        if (theme === 'white' && !isLogin) {
+            return {color: 'rgba(0, 0, 0, 0.5)', marginTop: '14px'}
+        } else if (theme === 'white' && isLogin) {
+            return {color: 'rgba(0, 0, 0, 0.5)', marginTop: '0'}
+        } else if (theme !== 'white' && !isLogin) {
+            return {color: 'rgba(255, 255, 255, 0.5)', marginTop: '14px'}
+        } else if (theme !== 'white' && !isLogin) {
+            return {color: 'rgba(255, 255, 255, 0.5)', marginTop: '14px'}
+        }
+    };
+
 
     return (
         <div style={{maxWidth: '256px'}}>
             <ItemBar
                 path={"/"}
+                theme={theme}
                 style={theme === 'white' ? {color: 'rgba(0, 0, 0, 0.5)'} : null}
                 styleP={theme === 'white' ? {color: 'rgba(0, 0, 0, 0.5)'} : null}
                 text={"Обучение"}
@@ -51,6 +66,7 @@ const LeftBar = props => {
 
             <ItemBar
                 path={"/fight"}
+                theme={theme}
                 style={theme === 'white' ? {color: 'rgba(0, 0, 0, 0.5)'} : null}
                 styleP={theme === 'white' ? {color: 'rgba(0, 0, 0, 0.5)'} : null}
                 text={"Состязания"}
@@ -59,6 +75,7 @@ const LeftBar = props => {
 
             <ItemBar
                 path={"/achievements"}
+                theme={theme}
                 style={handleColorAndMarginBottom()}
                 styleP={theme === 'white' ? {color: 'rgba(0, 0, 0, 0.5)'} : null}
                 text={"Ачивки"}
@@ -89,13 +106,12 @@ const LeftBar = props => {
                 : null
             }
 
-            <hr style={theme === 'black' ? {borderColor: 'rgba(255,255,255,0.12)'} : {borderColor: 'rgba(0,0,0,0.1)'}}/>
+            <hr className={s.hrLine} style={theme === 'black' ? {borderColor: 'rgba(255,255,255,0.12)'} : null}/>
 
             {isLogin
                 ? <ItemBar
                     isButton={true}
                     path={"/privacy"}
-                    style={!isLogin ? {marginTop: '14px'} : null}
                     text={"Приватность"}
                     icon={<LockOutlinedIcon/>}
                 />
@@ -105,8 +121,10 @@ const LeftBar = props => {
             <ItemBar
                 isButton={true}
                 onClick={handleOpenTheme}
+                styleP={theme === 'white' ? {color: 'rgba(0, 0, 0, 0.5)'} : null}
+                style={handleColorAndMarginTop()}
+                theme={theme}
                 text={"Тема приложения"}
-                style={{marginTop: '14px'}}
                 icon={<PaletteOutlinedIcon/>}
             />
 
@@ -114,6 +132,9 @@ const LeftBar = props => {
 
             <ItemBar
                 isButton={true}
+                theme={theme}
+                styleP={theme === 'white' ? {color: 'rgba(0, 0, 0, 0.5)'} : null}
+                style={handleColorAndMarginTop()}
                 onClick={() => LanguageMenu()}
                 text={"Язык"}
                 icon={<LanguageOutlinedIcon/>}
