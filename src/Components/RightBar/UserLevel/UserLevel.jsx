@@ -29,13 +29,17 @@ const UserLevel = ({level, exp, theme}) => {
                     </div>
                 </div>
                 <span style={checkStyleForTheme(
-                    {background: 'rgba(255, 255, 255, 0.12)'},
-                    {background: 'rgba(0, 0, 0, 0.12)'})}>
+                    {background: 'rgba(255, 255, 255, 0.12)', color: 'rgba(255, 255, 255, 0.87)'},
+                    {background: 'rgba(0, 0, 0, 0.12)', color: 'rgba(0, 0, 0, 0.87)'})}>
                     {level + 1}</span>
             </div>
             <div className={s.downUserLevel}>
-                <p>Уровень</p>
-                <div className={s.xp}>
+                <p style={checkStyleForTheme(
+                    {color: 'rgba(255, 255, 255, 0.87)'},
+                    {color: 'rgba(0, 0, 0, 0.87)'})}>Уровень</p>
+                <div style={checkStyleForTheme(
+                    {color: 'rgba(255, 255, 255, 0.87)'},
+                    {color: 'rgba(0, 0, 0, 0.87)'})} className={s.xp}>
                     Опыт: {exp}/1000
                 </div>
             </div>

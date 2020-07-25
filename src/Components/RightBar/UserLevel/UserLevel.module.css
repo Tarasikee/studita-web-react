@@ -14,7 +14,7 @@
     border-radius: 100%;
     transition: 500ms ease-in-out all;
     font-family: Roboto, sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 18px;
     line-height: 21px;
     color: rgba(255, 255, 255, 0.87);
@@ -50,8 +50,9 @@
 }
 
 .downUserLevel p {
+    transition: 500ms ease-in-out all;
     font-family: Roboto, sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 18px;
     line-height: 21px;
     color: rgba(255, 255, 255, 0.87);
@@ -59,8 +60,9 @@
 }
 
 .xp {
+    transition: 500ms ease-in-out all;
     font-family: Roboto, sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 16px;
     line-height: 19px;
     color: rgba(255, 255, 255, 0.5);
