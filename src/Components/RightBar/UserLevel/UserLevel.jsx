@@ -18,7 +18,12 @@ const UserLevel = ({level, exp, theme}) => {
 
             <div className={s.upUserLevel}>
                 <span>{level}</span>
-                <div className={s.chart}>
+                <div style={
+                    checkStyleForTheme(
+                        {background: 'rgba(255, 255, 255, 0.08)'},
+                        {background: 'rgba(0, 0, 0, 0.1)'}
+                    )
+                } className={s.chart}>
                     <div style={{width: exp * 0.1 + '%'}}>
 
                     </div>

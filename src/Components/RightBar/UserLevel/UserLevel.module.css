@@ -28,9 +28,9 @@
 .chart {
     width: 117px;
     height: 6px;
+    transition: 500ms ease-in-out all;
     margin-top: 12px;
     border-radius: 15px;
-    background: rgba(255, 255, 255, 0.08);
 }
 
 .chart > div {
