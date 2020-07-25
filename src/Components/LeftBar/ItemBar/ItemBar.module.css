@@ -15,13 +15,9 @@ button.containerItem {
     margin: 0;
     border: none;
     outline: none;
-    background-color: #111111;
+    background-color: transparent;
     border-radius: 0;
-    transition: 500ms ease-in-out all;
-}
-
-.whiteItem {
-    background-color: white!important;
+    transition: 500ms ease-out;
 }
 
 .containerItem.active .item {
@@ -39,7 +35,6 @@ button.containerItem {
     align-items: center;
     color: rgba(255, 255, 255, 0.5);
     padding: 10px 0 10px 14px;
-    transition: 100ms ease-in-out all;
     border-radius: 8px;
 }
 
@@ -53,7 +48,7 @@ button.containerItem {
 
 .item svg {
     width: 26px;
-    transition: 100ms ease-in-out all;
+    transition: 500ms ease-out;
     height: 26px;
 }
 
@@ -61,7 +56,7 @@ button.containerItem {
     margin-left: 18px;
     font-family: Roboto, sans-serif;
     font-weight: 500;
-    transition: 100ms ease-in-out all;
+    transition: 500ms ease-out;
     font-size: 18px;
     line-height: 21px;
 }

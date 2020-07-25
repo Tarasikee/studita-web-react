@@ -25,9 +25,7 @@ const ItemBar = ({path, style, icon, text, isButton, onClick, styleP, theme}) =>
                         </NavLink>
                         : <button
                             onClick={() => onClick()}
-                            className={
-                                theme === 'white' ? s.containerItem + ' ' + s.whiteItem : s.containerItem
-                            }
+                            className={s.containerItem}
                         >
                             <div style={style} className={
                                 theme === 'white' ? s.item + ' ' + s.white : s.item

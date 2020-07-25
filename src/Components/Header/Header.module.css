@@ -1,7 +1,7 @@
 header {
     display: flex;
     min-height: 79px;
-    transition: 500ms ease-in-out all;
+    transition: 500ms ease-out;
     justify-content: space-between;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 0 250px;
@@ -17,7 +17,7 @@ header {
     font-weight: 400;
     font-size: 24px;
     line-height: 100%;
-    transition: 500ms ease-in-out;
+    transition: 500ms ease-out;
     color: rgba(0, 0, 0, 0.87);
     margin-left: 12px;
 }
@@ -29,7 +29,7 @@ header div:nth-child(2) {
     align-items: center;
     font-family: Roboto, sans-serif;
     font-weight: 500;
-    transition: 500ms ease-in-out;
+    transition: 500ms ease-out;
     font-size: 30px;
     line-height: 100%;
     color: rgba(0, 0, 0, 0.87);

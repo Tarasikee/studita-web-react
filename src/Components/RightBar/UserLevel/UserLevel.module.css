@@ -1,6 +1,6 @@
 .userLevel {
     margin-top: 17px;
-    transition: 500ms ease-in-out all;
+    transition: 500ms ease-out;
     border-radius: 8px;
     padding: 18px;
 }
@@ -12,7 +12,7 @@
 .upUserLevel span {
     padding: 5px 10px 4px;
     border-radius: 100%;
-    transition: 500ms ease-in-out all;
+    transition: 500ms ease-out;
     font-family: Roboto, sans-serif;
     font-weight: 500;
     font-size: 18px;
@@ -28,7 +28,7 @@
 .chart {
     width: 117px;
     height: 6px;
-    transition: 500ms ease-in-out all;
+    transition: 500ms ease-out;
     margin-top: 12px;
     border-radius: 15px;
 }
@@ -50,7 +50,7 @@
 }
 
 .downUserLevel p {
-    transition: 500ms ease-in-out all;
+    transition: 500ms ease-out;
     font-family: Roboto, sans-serif;
     font-weight: 500;
     font-size: 18px;
@@ -60,7 +60,7 @@
 }
 
 .xp {
-    transition: 500ms ease-in-out all;
+    transition: 500ms ease-out;
     font-family: Roboto, sans-serif;
     font-weight: 400;
     font-size: 16px;

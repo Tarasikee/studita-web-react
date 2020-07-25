@@ -5,7 +5,7 @@
 
 .main-container {
     height: 100vh;
-    transition: 500ms ease-in-out all;
+    transition: 500ms ease-out;
     background-color: white;
     overflow: hidden;
 }
