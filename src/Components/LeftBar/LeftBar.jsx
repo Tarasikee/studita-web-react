@@ -26,36 +26,10 @@ const LeftBar = props => {
         setOpen(false);
     };
 
-    const handleColorAndMarginBottom = () => {
-
-        if (theme === 'white' && !isLogin) {
-            return {color: 'rgba(0, 0, 0, 0.5)', marginBottom: '14px'}
-        } else if (theme === 'white' && isLogin) {
-            return {color: 'rgba(0, 0, 0, 0.5)', marginBottom: '0'}
-        } else if (theme !== 'white' && !isLogin) {
-            return {color: 'rgba(255, 255, 255, 0.5)', marginBottom: '14px'}
-        } else if (theme !== 'white' && !isLogin) {
-            return {color: 'rgba(255, 255, 255, 0.5)', marginBottom: '14px'}
-        }
-    };
-
-    const handleColorAndMarginTop = () => {
-
-        if (theme === 'white' && !isLogin) {
-            return {color: 'rgba(0, 0, 0, 0.5)', marginTop: '14px'}
-        } else if (theme === 'white' && isLogin) {
-            return {color: 'rgba(0, 0, 0, 0.5)', marginTop: '0'}
-        } else if (theme !== 'white' && !isLogin) {
-            return {color: 'rgba(255, 255, 255, 0.5)', marginTop: '14px'}
-        } else if (theme !== 'white' && !isLogin) {
-            return {color: 'rgba(255, 255, 255, 0.5)', marginTop: '14px'}
-        }
-    };
-
-    const checkStyleForThemeWhite = (style_one, style_two) => {
+    const checkStyles = (style_one, style_two) => {
         return theme === 'white'
-            ? style_one//backgroundColor: 'rgba(255, 255, 255, 0.08)'
-            : style_two//backgroundColor: 'rgba(0, 0, 0, 0.06)'
+            ? style_one
+            : style_two
     };
 
 
@@ -64,8 +38,8 @@ const LeftBar = props => {
             <ItemBar
                 path={"/"}
                 theme={theme}
-                style={checkStyleForThemeWhite({color: 'rgba(0, 0, 0, 0.5)'}, null)}
-                styleP={checkStyleForThemeWhite({color: 'rgba(0, 0, 0, 0.5)'}, null)}
+                style={checkStyles({color: 'rgba(0, 0, 0, 0.5)'}, null)}
+                styleP={checkStyles({color: 'rgba(0, 0, 0, 0.5)'}, null)}
                 text={"Обучение"}
                 icon={<SchoolOutlinedIcon/>}
             />
@@ -73,8 +47,8 @@ const LeftBar = props => {
             <ItemBar
                 path={"/fight"}
                 theme={theme}
-                style={checkStyleForThemeWhite({color: 'rgba(0, 0, 0, 0.5)'}, null)}
-                styleP={checkStyleForThemeWhite({color: 'rgba(0, 0, 0, 0.5)'}, null)}
+                style={checkStyles({color: 'rgba(0, 0, 0, 0.5)'}, null)}
+                styleP={checkStyles({color: 'rgba(0, 0, 0, 0.5)'}, null)}
                 text={"Состязания"}
                 icon={<GroupOutlinedIcon/>}
             />
@@ -82,8 +56,8 @@ const LeftBar = props => {
             <ItemBar
                 path={"/achievements"}
                 theme={theme}
-                style={handleColorAndMarginBottom()}
-                styleP={checkStyleForThemeWhite({color: 'rgba(0, 0, 0, 0.5)'}, null)}
+                style={checkStyles({color: 'rgba(0, 0, 0, 0.5)'}, null)}
+                styleP={checkStyles({color: 'rgba(0, 0, 0, 0.5)'}, null)}
                 text={"Ачивки"}
                 icon={<StarBorderOutlinedIcon/>}
             />
@@ -127,8 +101,8 @@ const LeftBar = props => {
             <ItemBar
                 isButton={true}
                 onClick={handleOpenTheme}
-                style={handleColorAndMarginTop()}
-                styleP={checkStyleForThemeWhite({color: 'rgba(0, 0, 0, 0.5)'}, null)}
+                style={checkStyles({color: 'rgba(0, 0, 0, 0.5)'}, null)}
+                styleP={checkStyles({color: 'rgba(0, 0, 0, 0.5)'}, null)}
                 theme={theme}
                 text={"Тема приложения"}
                 icon={<PaletteOutlinedIcon/>}
@@ -139,8 +113,8 @@ const LeftBar = props => {
             <ItemBar
                 isButton={true}
                 theme={theme}
-                style={checkStyleForThemeWhite({color: 'rgba(0, 0, 0, 0.5)'}, null)}
-                styleP={checkStyleForThemeWhite({color: 'rgba(0, 0, 0, 0.5)'}, null)}
+                style={checkStyles({color: 'rgba(0, 0, 0, 0.5)'}, null)}
+                styleP={checkStyles({color: 'rgba(0, 0, 0, 0.5)'}, null)}
                 onClick={() => LanguageMenu()}
                 text={"Язык"}
                 icon={<LanguageOutlinedIcon/>}

@@ -1,10 +1,10 @@
 .static {
-    background: rgba(255, 255, 255, 0.08);
     border-radius: 8px;
     max-width: 256px;
     margin-top: 18px;
     display: flex;
     align-items: center;
+    transition: 500ms ease-out;
     padding: 18px;
 }
 
@@ -13,5 +13,5 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
-    color: rgba(255, 255, 255, 0.87);
+    transition: 500ms ease-out;
 }

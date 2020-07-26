@@ -6,7 +6,6 @@ import FriendsComponent from "./FriendsComponent/FriendsComponent";
 
 const RightBar = ({isLogin, days, level, exp, theme}) => {
 
-
     return (
         <div style={{maxWidth: '256px'}}>
             <UserLevel theme={theme} level={level} exp={exp}/>
