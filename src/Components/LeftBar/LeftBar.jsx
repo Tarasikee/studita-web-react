@@ -133,8 +133,8 @@ const LeftBar = props => {
             <ItemBar
                 isButton={true}
                 theme={theme}
+                style={theme === 'white' ? {color: 'rgba(0, 0, 0, 0.5)'} : null}
                 styleP={theme === 'white' ? {color: 'rgba(0, 0, 0, 0.5)'} : null}
-                style={handleColorAndMarginTop()}
                 onClick={() => LanguageMenu()}
                 text={"Язык"}
                 icon={<LanguageOutlinedIcon/>}
