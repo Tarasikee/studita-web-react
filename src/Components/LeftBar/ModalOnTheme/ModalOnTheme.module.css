@@ -6,7 +6,7 @@
     border-radius: 8px;
     transition: 500ms ease-in-out all;
     outline: none;
-    padding: 16px 20px;
+    padding: 16px 8px;
 }
 
 .modalTitle {
@@ -27,7 +27,7 @@
 
 .formControlClass {
     width: 100%;
-    margin-top: 13px!important;
+    margin-top: 13px !important;
 }
 
 .formControlLabel {
@@ -35,8 +35,8 @@
     display: flex;
     justify-content: space-between;
     margin-top: 7px;
-    margin-left: 2px!important;
-    margin-right: 0!important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
 .btnSubmit {

@@ -101,7 +101,7 @@ const ModalOnTheme = props => {
                                 <RadioGroup value={value} onChange={handleChange}>
                                     <FormControlLabel value="black"
                                                       labelPlacement="start"
-                                                      style={isThemeWhite()}
+                                                      style={/*isThemeWhite()*/ {background: 'rgba(0, 0, 0, 0.08)'}}
                                                       control={RadioForTheme()}
                                                       className={s.formControlLabel}
                                                       label="Тёмная"/>

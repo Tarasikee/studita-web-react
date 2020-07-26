@@ -52,14 +52,20 @@ const LeftBar = props => {
         }
     };
 
+    const checkStyleForThemeWhite = (style_one, style_two) => {
+        return theme === 'white'
+            ? style_one//backgroundColor: 'rgba(255, 255, 255, 0.08)'
+            : style_two//backgroundColor: 'rgba(0, 0, 0, 0.06)'
+    };
+
 
     return (
         <div style={{maxWidth: '256px'}}>
             <ItemBar
                 path={"/"}
                 theme={theme}
-                style={theme === 'white' ? {color: 'rgba(0, 0, 0, 0.5)'} : null}
-                styleP={theme === 'white' ? {color: 'rgba(0, 0, 0, 0.5)'} : null}
+                style={checkStyleForThemeWhite({color: 'rgba(0, 0, 0, 0.5)'}, null)}
+                styleP={checkStyleForThemeWhite({color: 'rgba(0, 0, 0, 0.5)'}, null)}
                 text={"Обучение"}
                 icon={<SchoolOutlinedIcon/>}
             />
@@ -67,8 +73,8 @@ const LeftBar = props => {
             <ItemBar
                 path={"/fight"}
                 theme={theme}
-                style={theme === 'white' ? {color: 'rgba(0, 0, 0, 0.5)'} : null}
-                styleP={theme === 'white' ? {color: 'rgba(0, 0, 0, 0.5)'} : null}
+                style={checkStyleForThemeWhite({color: 'rgba(0, 0, 0, 0.5)'}, null)}
+                styleP={checkStyleForThemeWhite({color: 'rgba(0, 0, 0, 0.5)'}, null)}
                 text={"Состязания"}
                 icon={<GroupOutlinedIcon/>}
             />
@@ -77,7 +83,7 @@ const LeftBar = props => {
                 path={"/achievements"}
                 theme={theme}
                 style={handleColorAndMarginBottom()}
-                styleP={theme === 'white' ? {color: 'rgba(0, 0, 0, 0.5)'} : null}
+                styleP={checkStyleForThemeWhite({color: 'rgba(0, 0, 0, 0.5)'}, null)}
                 text={"Ачивки"}
                 icon={<StarBorderOutlinedIcon/>}
             />
@@ -121,8 +127,8 @@ const LeftBar = props => {
             <ItemBar
                 isButton={true}
                 onClick={handleOpenTheme}
-                styleP={theme === 'white' ? {color: 'rgba(0, 0, 0, 0.5)'} : null}
                 style={handleColorAndMarginTop()}
+                styleP={checkStyleForThemeWhite({color: 'rgba(0, 0, 0, 0.5)'}, null)}
                 theme={theme}
                 text={"Тема приложения"}
                 icon={<PaletteOutlinedIcon/>}
@@ -133,8 +139,8 @@ const LeftBar = props => {
             <ItemBar
                 isButton={true}
                 theme={theme}
-                style={theme === 'white' ? {color: 'rgba(0, 0, 0, 0.5)'} : null}
-                styleP={theme === 'white' ? {color: 'rgba(0, 0, 0, 0.5)'} : null}
+                style={checkStyleForThemeWhite({color: 'rgba(0, 0, 0, 0.5)'}, null)}
+                styleP={checkStyleForThemeWhite({color: 'rgba(0, 0, 0, 0.5)'}, null)}
                 onClick={() => LanguageMenu()}
                 text={"Язык"}
                 icon={<LanguageOutlinedIcon/>}
