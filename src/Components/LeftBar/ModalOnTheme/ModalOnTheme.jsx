@@ -75,6 +75,7 @@ const ModalOnTheme = props => {
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
                 className="modal"
+                open={props.open}
                 style={{
                     display: 'flex',
                     justifyContent: 'center',
@@ -87,42 +88,40 @@ const ModalOnTheme = props => {
                     timeout: 500
                 }}
             >
-                <Fade in={props.modalState}>
-                    <div style={theme === 'white' ? {background: '#FDFDFD'} : null} className={s.modalMain}>
-                        <h2 className={s.modalTitle}>
-                            <CloseIcon className={s.closeIcon}
-                                       style={isThemeWhite()}
-                                       onClick={() => onClose()}/>
-                            <span style={isThemeWhite()}>Тема приложения</span>
-                            <CloseIcon style={{color: 'transparent'}}/>
-                        </h2>
-                        <form onSubmit={handleSubmit}>
-                            <FormControl className={s.formControlClass} component="fieldset">
-                                <RadioGroup value={value} onChange={handleChange}>
-                                    <FormControlLabel value="black"
-                                                      labelPlacement="start"
-                                                      style={isThemeWhite()}
-                                                      control={RadioForTheme()}
-                                                      className={theme === 'black'
-                                                          ? s.formControlLabel
-                                                          : s.formControlLabel + ' ' + s.white}
-                                                      label="Тёмная"/>
-                                    <FormControlLabel value="white"
-                                                      labelPlacement="start"
-                                                      style={isThemeWhite()}
-                                                      control={RadioForTheme()}
-                                                      className={theme === 'black'
-                                                          ? s.formControlLabel
-                                                          : s.formControlLabel + ' ' + s.white}
-                                                      label="Светлая"/>
-                                    <button type="submit" className={s.btnSubmit}>
-                                        Применить
-                                    </button>
-                                </RadioGroup>
-                            </FormControl>
-                        </form>
-                    </div>
-                </Fade>
+                <div style={theme === 'white' ? {background: '#FDFDFD'} : null} className={s.modalMain}>
+                    <h2 className={s.modalTitle}>
+                        <CloseIcon className={s.closeIcon}
+                                   style={isThemeWhite()}
+                                   onClick={() => onClose()}/>
+                        <span style={isThemeWhite()}>Тема приложения</span>
+                        <CloseIcon style={{color: 'transparent'}}/>
+                    </h2>
+                    <form onSubmit={handleSubmit}>
+                        <FormControl className={s.formControlClass} component="fieldset">
+                            <RadioGroup value={value} onChange={handleChange}>
+                                <FormControlLabel value="black"
+                                                  labelPlacement="start"
+                                                  style={isThemeWhite()}
+                                                  control={RadioForTheme()}
+                                                  className={theme === 'black'
+                                                      ? s.formControlLabel
+                                                      : s.formControlLabel + ' ' + s.white}
+                                                  label="Тёмная"/>
+                                <FormControlLabel value="white"
+                                                  labelPlacement="start"
+                                                  style={isThemeWhite()}
+                                                  control={RadioForTheme()}
+                                                  className={theme === 'black'
+                                                      ? s.formControlLabel
+                                                      : s.formControlLabel + ' ' + s.white}
+                                                  label="Светлая"/>
+                                <button type="submit" className={s.btnSubmit}>
+                                    Применить
+                                </button>
+                            </RadioGroup>
+                        </FormControl>
+                    </form>
+                </div>
             </Modal>
         </div>
     );

@@ -4,7 +4,7 @@
     width: 398px;
     background: #252525;
     border-radius: 8px;
-    transition: 500ms ease-in-out all;
+    transition: 500ms ease-out;
     outline: none;
     padding: 16px 0 0;
 }
