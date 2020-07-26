@@ -39,6 +39,14 @@ button.containerItem {
     border-radius: 8px;
 }
 
+.containerItem.active .item.white {
+    background: rgba(26, 115, 232, 0.1)!important;
+}
+
+.containerItem.active .item.white:hover {
+    background: rgba(26, 115, 232, 0.1)!important;
+}
+
 .item.white:hover {
     background: rgba(0, 0, 0, 0.06)!important;
 }
