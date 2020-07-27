@@ -115,9 +115,11 @@ const ModalOnTheme = props => {
                                                       ? s.formControlLabel
                                                       : s.formControlLabel + ' ' + s.white}
                                                   label="Светлая"/>
-                                <button type="submit" className={s.btnSubmit}>
-                                    Применить
-                                </button>
+                                <div className={s.btnContainer}>
+                                    <button type="submit" className={s.btnSubmit}>
+                                        Применить
+                                    </button>
+                                </div>
                             </RadioGroup>
                         </FormControl>
                     </form>
