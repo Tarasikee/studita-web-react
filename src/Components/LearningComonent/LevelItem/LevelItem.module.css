@@ -3,7 +3,11 @@
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     cursor: pointer;
-    transition: .1s cubic-bezier(0.18, 0.36, 0, 1.24);
+    transition: 500ms ease-out;
+}
+
+.levelItem.white {
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .levelItem:hover {
@@ -16,16 +20,25 @@
     font-size: 20px;
     line-height: 23px;
     color: rgba(255, 255, 255, 0.87);
+    transition: 500ms ease-out;
+}
+
+.levelItem.white h5 {
+    color: rgba(0, 0, 0, 0.87);
 }
 
 .levelItem p {
     width: 290px;
     margin: 10px 0 18px;
     font-family: Roboto, sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 16px;
     line-height: 19px;
     color: rgba(255, 255, 255, 0.87);
+}
+
+.levelItem.white p {
+    color: rgba(0, 0, 0, 0.87);
 }
 
 .ended {
@@ -42,10 +55,15 @@
 
 .chart span {
     font-family: Roboto, sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 14px;
     line-height: 16px;
     color: rgba(255, 255, 255, 0.5);
+    transition: 500ms ease-out;
+}
+
+.chart.white span {
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .chart > div {
@@ -57,6 +75,10 @@
     overflow: hidden;
 }
 
+.chart.white  > div{
+    background: rgba(0, 0, 0, 0.08);
+}
+
 .chart > div > div {
     height: 100%;
     border-radius: 15px 0 0 15px;
@@ -65,6 +87,11 @@
 
 .InterestingLevel {
     background: linear-gradient(90deg, #0066FF 0%, #0085FF 100%);
+    transition: 500ms ease-out;
+}
+
+.InterestingLevel.white:hover {
+    background: linear-gradient(90deg, rgba(0, 102, 255, 0.64) 0%, rgba(0, 133, 255, 0.64) 100%);
 }
 
 .InterestingLevel:hover {
@@ -87,7 +114,12 @@
 .SubscribeLevel {
     max-width: 334px;
     background: rgba(255, 255, 255, 0.08);
+    transition: 500ms ease-out;
     margin-bottom: 21px;
+}
+
+.SubscribeLevel.white {
+    background: rgba(0, 0, 0, 0.06);
 }
 
 .SubscribeLevel p {

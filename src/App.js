@@ -79,6 +79,7 @@ class App extends Component {
 
                             <Route exact path="/">
                                 <LearningComponent
+                                    theme={this.state.theme}
                                     onLevelClick={this.handleOnLevelClick}
                                     LevelsData={this.state.LevelsData}
                                 />

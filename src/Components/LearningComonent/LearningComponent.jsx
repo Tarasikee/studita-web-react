@@ -3,14 +3,14 @@ import s from './LearningComponent.module.css';
 import LevelItem from "./LevelItem/LevelItem";
 import {useCookies} from 'react-cookie';
 
-const LearningComponent = ({LevelsData}) => {
+const LearningComponent = ({LevelsData, theme}) => {
 
 
     let key = 0;
     const [cookies] = useCookies(['LEVEL_COOKIE']);
 
     const cookieExist = e => {
-        if (document.cookie !== '') {
+        if (typeof cookies.LEVEL_COOKIE === undefined) {
             return cookies.LEVEL_COOKIE.chapter_number === e.chapter_number
                 ? cookies.LEVEL_COOKIE.progress
                 : 0
@@ -45,7 +45,7 @@ const LearningComponent = ({LevelsData}) => {
     const renderLevel = LevelsData.map(level => {
         return (
             <>
-                <div className={s.levelNumber}>{level.level_number} УРОВЕНЬ</div>
+                <div className={theme === 'white' ? `${s.levelNumber} ${s.white}` : `${s.levelNumber}`}>{level.level_number} УРОВЕНЬ</div>
                 <div className={s.levelsTable}>
                     {
                         Array.from(level.children, e => {
@@ -55,6 +55,7 @@ const LearningComponent = ({LevelsData}) => {
                                 case 'chapter':
                                     return <LevelItem
                                         key={levelKey}
+                                        theme={theme}
                                         title={e.title}
                                         description={e.subtitle}
                                         levelProgress={cookieExist(e)}
@@ -65,6 +66,7 @@ const LearningComponent = ({LevelsData}) => {
                                 case 'interesting':
                                     return <LevelItem
                                         key={levelKey}
+                                        theme={theme}
                                         interestingTitle={e.title}
                                         interestingDescription={e.subtitle}
                                         style={{width: '298px', marginTop: '22px', border: 'none'}}
@@ -81,6 +83,7 @@ const LearningComponent = ({LevelsData}) => {
                                     }}>
                                         <LevelItem
                                             key={levelKey}
+                                            theme={theme}
                                             subscribeTitle={e.title}
                                             isSubscribe={true}
                                             isInteresting={false}

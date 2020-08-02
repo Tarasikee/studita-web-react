@@ -14,8 +14,10 @@ const LevelItem = props => {
         levelProgress,
         style,
         isSubscribe,
-        button
+        button,
+        theme
     } = props;
+
 
     const isEnded = e => {
         if (e === 15) {
@@ -54,10 +56,10 @@ const LevelItem = props => {
             )
         } else if (!isInteresting && !isSubscribe) {
             return (
-                <div style={style} className={s.levelItem}>
+                <div style={style} className={theme === 'black' ? `${s.levelItem}` : `${s.levelItem} ${s.white}`}>
                     <h5>{title}</h5>
                     <p>{description}</p>
-                    <div className={s.chart}>
+                    <div className={theme === 'white' ? `${s.white} ${s.chart}` : `${s.chart}`}>
                         <span>Прогресс: </span> {isEnded(levelProgress)}
                         <div>
                             <div style={{width: (6.666 * levelProgress) + '%'}}>
@@ -68,9 +70,14 @@ const LevelItem = props => {
                 </div>)
         } else if (!isInteresting && isSubscribe) {
             return (
-                <div style={style} className={`${s.levelItem} ${s.SubscribeLevel}`}>
+                <div style={style}
+                     className={theme === 'black'
+                            ? `${s.levelItem} ${s.SubscribeLevel}`
+                            : `${s.levelItem} ${s.SubscribeLevel} ${s.white}`}>
+
                     <p>{subscribeTitle}</p>
                     <p><a href={"./"}>{button}</a></p>
+
                 </div>
             )
         }
