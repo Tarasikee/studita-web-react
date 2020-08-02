@@ -83,7 +83,6 @@ class App extends Component {
                                     onLevelClick={this.handleOnLevelClick}
                                     LevelsData={this.state.LevelsData}
                                 />
-
                             </Route>
 
                             <Route exact path="/fight">
