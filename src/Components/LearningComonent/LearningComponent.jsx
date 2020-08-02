@@ -25,7 +25,7 @@ const LearningComponent = ({LevelsData, theme}) => {
                 width: '296px',
                 marginLeft: '22px',
                 WebkitMaskImage: 'linear-gradient(to top, transparent 20%, black 210%)',
-                transition: '100000000000s',
+                transition: 'none',
                 cursor: 'auto',
                 userSelect: 'none'
             }
