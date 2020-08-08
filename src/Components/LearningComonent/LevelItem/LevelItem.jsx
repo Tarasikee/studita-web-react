@@ -15,7 +15,8 @@ const LevelItem = props => {
         style,
         isSubscribe,
         button,
-        theme
+        theme,
+        onClick
     } = props;
 
 
@@ -46,7 +47,7 @@ const LevelItem = props => {
     const levelType = () => {
         if (isInteresting && !isSubscribe) {
             return (
-                <div style={{width: '100%'}}>
+                <div style={{width: '100%'}} onClick={() => onClick()}>
                     <div style={style} className={`${s.levelItem} ${s.InterestingLevel}`}>
                         <p className={s.tagStyle}>{tagsMapper(tags)}</p>
                         <h5>{interestingTitle}</h5>
@@ -56,7 +57,7 @@ const LevelItem = props => {
             )
         } else if (!isInteresting && !isSubscribe) {
             return (
-                <div style={style} className={theme === 'black' ? `${s.levelItem}` : `${s.levelItem} ${s.white}`}>
+                <div style={style} onClick={() => onClick()} className={theme === 'black' ? `${s.levelItem}` : `${s.levelItem} ${s.white}`}>
                     <h5>{title}</h5>
                     <p>{description}</p>
                     <div className={theme === 'white' ? `${s.white} ${s.chart}` : `${s.chart}`}>

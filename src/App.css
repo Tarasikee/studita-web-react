@@ -22,6 +22,31 @@
     padding: 0 246px;
 }
 
+.loader {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    transition: 1000ms ease-in;
+    transition-delay: 500ms;
+}
+
+.loader.ready {
+    background: transparent!important;
+    pointer-events: none;
+}
+
+.loader img {
+    width: 58px;
+    transition-delay: 500ms;
+}
+
+.loader.ready img {
+    opacity: 0;
+}
 
 @media (max-width: 1780px) {
     .main-row {

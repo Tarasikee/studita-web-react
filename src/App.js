@@ -26,7 +26,8 @@ class App extends Component {
                 isLogin: false,
             },
             theme: '',
-            LevelsData: []
+            LevelsData: [],
+            isLoaded: false
         };
 
         this.handleOnLevelClick = () => {
@@ -52,6 +53,12 @@ class App extends Component {
                     console.log(err)
                 });
 
+
+            setTimeout(() => {
+                this.setState({isLoaded: true});
+            }, 200);
+
+
             if (typeof currentTheme === 'undefined') {
                 this.setState({theme: 'black'})
             } else if (currentTheme === 'white') {
@@ -64,7 +71,7 @@ class App extends Component {
 
     render() {
         return (
-            <div style={this.state.theme === 'black' ? {backgroundColor: '#111111'}: null}
+            <div style={this.state.theme === 'black' ? {backgroundColor: '#111111'} : null}
                  className="main-container">
 
                 <Header theme={this.state.theme} isLogin={this.state.params.isLogin}/>
@@ -97,6 +104,11 @@ class App extends Component {
                         </div>
                     </div>
                 </Switch>
+                <div style={this.state.theme === 'black' ? {backgroundColor: '#111111'} : {backgroundColor: '#ffffff'}}
+                     className={this.state.isLoaded ? 'loader ready' : 'loader'}
+                >
+                    <img alt={"ur ma fet"} src={"./favicon.svg"}/>
+                </div>
             </div>
         );
     }

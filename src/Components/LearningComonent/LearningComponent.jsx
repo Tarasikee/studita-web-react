@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './LearningComponent.module.css';
 import LevelItem from "./LevelItem/LevelItem";
 import {useCookies} from 'react-cookie';
+import ModalForLevels from "./ModalForLevels/ModalForLevels";
 
 const LearningComponent = ({LevelsData, theme}) => {
 
-
-    let key = 0;
+    let key = 1;
     const [cookies] = useCookies(['LEVEL_COOKIE']);
+    const [open, setOpen] = useState(false);
 
     const cookieExist = e => {
         if (typeof cookies.LEVEL_COOKIE === undefined) {
@@ -32,7 +33,7 @@ const LearningComponent = ({LevelsData, theme}) => {
         } else if (5 % s === 0) {
             return {
                 width: '296px',
-                marginLeft: '22px'
+                marginRight: '22px'
             }
         } else {
             return {
@@ -41,11 +42,26 @@ const LearningComponent = ({LevelsData, theme}) => {
         }
     };
 
+    const handleOpen = key => {
+        setOpen(true);
+        getKey(key)
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const getKey = e => {
+        alert(e)
+    };
+
 
     const renderLevel = LevelsData.map(level => {
         return (
             <>
-                <div className={theme === 'white' ? `${s.levelNumber} ${s.white}` : `${s.levelNumber}`}>{level.level_number} УРОВЕНЬ</div>
+                <div
+                    className={theme === 'white' ? `${s.levelNumber} ${s.white}` : `${s.levelNumber}`}>{level.level_number} УРОВЕНЬ
+                </div>
                 <div className={s.levelsTable}>
                     {
                         Array.from(level.children, e => {
@@ -56,6 +72,7 @@ const LearningComponent = ({LevelsData, theme}) => {
                                     return <LevelItem
                                         key={levelKey}
                                         theme={theme}
+                                        onClick={() => handleOpen(levelKey)}
                                         title={e.title}
                                         description={e.subtitle}
                                         levelProgress={cookieExist(e)}
@@ -67,6 +84,7 @@ const LearningComponent = ({LevelsData, theme}) => {
                                     return <LevelItem
                                         key={levelKey}
                                         theme={theme}
+                                        onClick={() => handleOpen(levelKey + 'interesting')}
                                         interestingTitle={e.title}
                                         interestingDescription={e.subtitle}
                                         style={{width: '298px', marginTop: '22px', border: 'none'}}
@@ -109,6 +127,7 @@ const LearningComponent = ({LevelsData, theme}) => {
                     renderLevel
                 }
             </div>
+            <ModalForLevels open={open} chapter_number={'1'} theme={theme} onClose={handleClose}/>
         </div>
     );
 };
