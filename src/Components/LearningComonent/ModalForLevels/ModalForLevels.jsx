@@ -1,10 +1,10 @@
-import React, {useLayoutEffect} from "react";
+import React, {useLayoutEffect, useState} from "react";
 import {Modal, Backdrop} from "@material-ui/core";
 
 
 const ModalOnTheme = props => {
     let {theme} = props;
-    const [setValue] = React.useState(theme);
+    const [value, setValue] = React.useState(theme);
     // debugger
 
     useLayoutEffect(() => {
