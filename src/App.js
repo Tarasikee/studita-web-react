@@ -8,7 +8,6 @@ import {withCookies, Cookies} from 'react-cookie';
 import LearningComponent from "./Components/LearningComonent/LearningComponent";
 import axios from 'axios';
 import RightBar from "./Components/RightBar/RightBar";
-import ModalForLevels from "./Components/LearningComonent/ModalForLevels/ModalForLevels";
 
 class App extends Component {
 
