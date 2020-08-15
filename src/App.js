@@ -27,7 +27,8 @@ class App extends Component {
             },
             theme: '',
             LevelsData: [],
-            isLoaded: false
+            isLoaded: false,
+            currentChapter: 0
         };
 
         this.handleOnLevelClick = () => {
@@ -36,6 +37,10 @@ class App extends Component {
                 progress: '12'
             });
             cookies.set('LEVEL_COOKIE', name, {path: '/'});
+        };
+
+        this.handleChapter = key => {
+            this.setState({currentChapter: key});
         };
 
         this.onChangeBackground = e => {
@@ -89,6 +94,8 @@ class App extends Component {
                                     theme={this.state.theme}
                                     onLevelClick={this.handleOnLevelClick}
                                     LevelsData={this.state.LevelsData}
+                                    currentChapter={this.state.currentChapter}
+                                    handleChapter={this.handleChapter}
                                 />
                             </Route>
 

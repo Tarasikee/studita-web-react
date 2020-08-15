@@ -30,7 +30,7 @@
     top: 0;
     display: flex;
     justify-content: center;
-    transition: 1000ms ease-in;
+    transition: 500ms ease-in;
     transition-delay: 500ms;
 }
 
