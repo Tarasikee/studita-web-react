@@ -7,8 +7,6 @@ const ModalOnTheme = props => {
     let {theme, chapterdata} = props;
     const [value, setValue] = useState(null);
 
-    console.log(chapterdata);
-
     /** Use for Modal theme of
      * @MaterialUI */
     useLayoutEffect(() => {

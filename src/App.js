@@ -39,11 +39,14 @@ class App extends Component {
             cookies.set('LEVEL_COOKIE', name, {path: '/'});
         };
 
-        this.handleChapter = key => {
-
-            console.log(key);
-
-            this.setState({ChapterData: key});
+        this.handleChapter = chapter_number => {
+            axios.get('http://37.53.93.223:5037/' + chapter_number)
+                .then(res => {
+                    this.setState({ChapterData: res.data})
+                })
+                .catch(err => {
+                    console.log(err.data)
+                })
         };
 
         this.onChangeBackground = e => {
