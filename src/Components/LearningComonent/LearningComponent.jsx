@@ -4,7 +4,7 @@ import LevelItem from "./LevelItem/LevelItem";
 import {useCookies} from 'react-cookie';
 import ModalForLevels from "./ModalForLevels/ModalForLevels";
 
-const LearningComponent = ({LevelsData, theme, handleChapter, currentChapter}) => {
+const LearningComponent = ({LevelsData, theme, handleChapter, chapterdata}) => {
 
     let key = 1;
     let interestingKey = -1;
@@ -131,7 +131,7 @@ const LearningComponent = ({LevelsData, theme, handleChapter, currentChapter}) =
                     renderLevel
                 }
             </div>
-            <ModalForLevels open={open} chapter_number={currentChapter} theme={theme} onClose={handleClose}/>
+            <ModalForLevels open={open} chapterdata={chapterdata} theme={theme} onClose={handleClose}/>
         </div>
     );
 };

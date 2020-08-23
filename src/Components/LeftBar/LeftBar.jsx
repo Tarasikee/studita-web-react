@@ -26,8 +26,6 @@ const LeftBar = props => {
         setOpen(false);
     };
 
-
-
     return (
         <div style={{maxWidth: '256px'}}>
             <ItemBar

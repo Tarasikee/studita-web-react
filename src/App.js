@@ -27,8 +27,8 @@ class App extends Component {
             },
             theme: '',
             LevelsData: [],
-            isLoaded: false,
-            currentChapter: 0
+            ChapterData: [],
+            isLoaded: false
         };
 
         this.handleOnLevelClick = () => {
@@ -40,12 +40,17 @@ class App extends Component {
         };
 
         this.handleChapter = key => {
-            this.setState({currentChapter: key});
+
+            console.log(key);
+
+            this.setState({ChapterData: key});
         };
 
         this.onChangeBackground = e => {
             this.setState({theme: e});
         };
+
+        //Add get chapters  logic with axios
 
         this.componentDidMount = () => {
 
@@ -94,7 +99,7 @@ class App extends Component {
                                     theme={this.state.theme}
                                     onLevelClick={this.handleOnLevelClick}
                                     LevelsData={this.state.LevelsData}
-                                    currentChapter={this.state.currentChapter}
+                                    chapterdata={this.state.ChapterData}
                                     handleChapter={this.handleChapter}
                                 />
                             </Route>

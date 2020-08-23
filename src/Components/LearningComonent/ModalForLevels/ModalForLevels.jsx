@@ -1,27 +1,20 @@
-import React, {useLayoutEffect, useState} from "react";
-import {Modal, Backdrop} from "@material-ui/core";
-import axios from 'axios';
+import React, {useLayoutEffect, useState} from "react"
+import {Modal, Backdrop} from "@material-ui/core"
+import s from './ModalForLevels.module.css'
 
 
 const ModalOnTheme = props => {
-    let {theme, chapter_number} = props;
-    const [
-        value, setValue
-    ] = React.useState(theme);
-    // debugger
+    let {theme, chapterdata} = props;
+    const [value, setValue] = useState(null);
 
+    console.log(chapterdata);
+
+    /** Use for Modal theme of
+     * @MaterialUI */
     useLayoutEffect(() => {
-        setValue(theme)
-    }, [theme]);
-
-    axios.get('http://37.53.93.223:5037/' + chapter_number)
-        .then(res => {
-            console.log(res.data)
-        })
-        .catch(err => {
-            console.log(err)
-        });
-
+        setValue(value);
+    });
+    /** end */
 
     return (
         <div>
@@ -42,7 +35,7 @@ const ModalOnTheme = props => {
                     timeout: 500
                 }}
             >
-                <div>
+                <div className={s.asdasd}>
                     <h2>
 
                     </h2>
